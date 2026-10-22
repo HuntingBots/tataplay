@@ -1,0 +1,13 @@
+services:
+  tataplay:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: tataplay
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "8000:80"
+    volumes:
+      - ./:/var/www/html
+      - ./app/data:/var/www/html/app/data
